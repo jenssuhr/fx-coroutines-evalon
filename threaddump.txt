@@ -1,0 +1,346 @@
+2020-10-06 12:38:29
+Full thread dump OpenJDK 64-Bit Server VM (14.0.2+12 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007fb86ac081c0, length=19, elements={
+0x00007fb90b009000, 0x00007fb91b118000, 0x00007fb91b013800, 0x00007fb8eb809800,
+0x00007fb8eb80b000, 0x00007fb8eb80c000, 0x00007fb8ec010800, 0x00007fb91b810000,
+0x00007fb8ee030800, 0x00007fb90b03a000, 0x00007fb90b039000, 0x00007fb90b03d000,
+0x00007fb91b119800, 0x00007fb90b082800, 0x00007fb91b8da000, 0x00007fb90b1cc800,
+0x00007fb91bb28800, 0x00007fb91b3eb800, 0x00007fb91b3ec800
+}
+
+"main" #1 prio=5 os_prio=31 cpu=497.35ms elapsed=79.40s tid=0x00007fb90b009000 nid=0x1703 waiting on condition  [0x0000700002508000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.2/Native Method)
+	- parking to wait for  <0x000000044cc0fc30> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@14.0.2/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@14.0.2/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ThreadPoolExecutor.awaitTermination(java.base@14.0.2/ThreadPoolExecutor.java:1456)
+	at io.kotest.engine.KotestEngine.submitBatch(KotestEngine.kt:147)
+	at io.kotest.engine.KotestEngine.submitAll(KotestEngine.kt:128)
+	at io.kotest.engine.KotestEngine.execute(KotestEngine.kt:84)
+	at io.kotest.engine.KotestEngineLauncher.launch(KotestEngineLauncher.kt:41)
+	at io.kotest.engine.launcher.ExecuteKt$execute$1.invokeSuspend(execute.kt:47)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlin.coroutines.ContinuationKt.startCoroutine(Continuation.kt:115)
+	at io.kotest.engine.launcher.ExecuteKt.future(execute.kt:85)
+	at io.kotest.engine.launcher.ExecuteKt.execute(execute.kt:32)
+	at io.kotest.engine.launcher.Execute.run(main.kt:121)
+	at com.github.ajalt.clikt.parsers.Parser.parse(Parser.kt:170)
+	at com.github.ajalt.clikt.parsers.Parser.parse(Parser.kt:16)
+	at com.github.ajalt.clikt.core.CliktCommand.parse(CliktCommand.kt:258)
+	at com.github.ajalt.clikt.core.CliktCommand.parse$default(CliktCommand.kt:255)
+	at com.github.ajalt.clikt.core.CliktCommand.main(CliktCommand.kt:273)
+	at com.github.ajalt.clikt.core.CliktCommand.main(CliktCommand.kt:298)
+	at io.kotest.engine.launcher.MainKt.main(main.kt:24)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=31 cpu=0.39ms elapsed=79.39s tid=0x00007fb91b118000 nid=0x4503 waiting on condition  [0x0000700002c1e000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.2/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.2/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.2/Reference.java:213)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=31 cpu=0.17ms elapsed=79.39s tid=0x00007fb91b013800 nid=0x4403 in Object.wait()  [0x0000700002d21000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.2/Native Method)
+	- waiting on <0x0000000400001df8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.2/ReferenceQueue.java:155)
+	- locked <0x0000000400001df8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.2/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.2/Finalizer.java:170)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=31 cpu=0.20ms elapsed=79.38s tid=0x00007fb8eb809800 nid=0xa903 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #5 daemon prio=9 os_prio=31 cpu=0.04ms elapsed=79.38s tid=0x00007fb8eb80b000 nid=0xa803 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=31 cpu=736.74ms elapsed=79.38s tid=0x00007fb8eb80c000 nid=0xa603 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #14 daemon prio=9 os_prio=31 cpu=185.13ms elapsed=79.38s tid=0x00007fb8ec010800 nid=0x5b03 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #18 daemon prio=9 os_prio=31 cpu=7.54ms elapsed=79.38s tid=0x00007fb91b810000 nid=0xa203 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #19 daemon prio=8 os_prio=31 cpu=1.04ms elapsed=79.36s tid=0x00007fb8ee030800 nid=0x9e03 in Object.wait()  [0x000070000353c000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.2/Native Method)
+	- waiting on <0x0000000400003190> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.2/ReferenceQueue.java:155)
+	- locked <0x0000000400003190> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.2/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.2/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.2/InnocuousThread.java:134)
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Transport Listener: dt_socket" #20 daemon prio=10 os_prio=31 cpu=15.66ms elapsed=79.34s tid=0x00007fb90b03a000 nid=0x6403 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Event Helper Thread" #21 daemon prio=10 os_prio=31 cpu=62.74ms elapsed=79.34s tid=0x00007fb90b039000 nid=0x6603 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Command Reader" #22 daemon prio=10 os_prio=31 cpu=12.04ms elapsed=79.34s tid=0x00007fb90b03d000 nid=0x9503 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Coroutines Debugger Cleaner" #23 daemon prio=5 os_prio=31 cpu=0.15ms elapsed=79.18s tid=0x00007fb91b119800 nid=0x6803 in Object.wait()  [0x0000700003c51000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.2/Native Method)
+	- waiting on <0x0000000400001fb0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.2/ReferenceQueue.java:155)
+	- locked <0x0000000400001fb0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.2/ReferenceQueue.java:176)
+	at kotlinx.coroutines.debug.internal.ConcurrentWeakMap.runWeakRefQueueCleaningLoopUntilInterrupted(ConcurrentWeakMap.kt:74)
+	at kotlinx.coroutines.debug.internal.DebugProbesImpl$startWeakRefCleanerThread$1.invoke(DebugProbesImpl.kt:101)
+	at kotlinx.coroutines.debug.internal.DebugProbesImpl$startWeakRefCleanerThread$1.invoke(DebugProbesImpl.kt:23)
+	at kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #24 daemon prio=9 os_prio=31 cpu=0.13ms elapsed=79.17s tid=0x00007fb90b082800 nid=0x6a03 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"kotest-engine-0" #49 prio=5 os_prio=31 cpu=256.80ms elapsed=77.97s tid=0x00007fb91b8da000 nid=0x9007 waiting on condition  [0x000070000405c000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.2/Native Method)
+	- parking to wait for  <0x000000044a9d0328> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@14.0.2/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@14.0.2/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ThreadPoolExecutor.awaitTermination(java.base@14.0.2/ThreadPoolExecutor.java:1456)
+	at io.kotest.engine.spec.SpecRunner.runParallel(SpecRunner.kt:88)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner.access$runParallel(SingleInstanceSpecRunner.kt:32)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner$execute$2.invokeSuspend(SingleInstanceSpecRunner.kt:81)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner$execute$2.invoke(SingleInstanceSpecRunner.kt)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner$execute$3.invokeSuspend(SingleInstanceSpecRunner.kt:89)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner$execute$3.invoke(SingleInstanceSpecRunner.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:91)
+	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:194)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner.execute(SingleInstanceSpecRunner.kt:87)
+	at io.kotest.engine.spec.SpecExecutor$runTests$run$1.invokeSuspend(SpecExecutor.kt:130)
+	at io.kotest.engine.spec.SpecExecutor$runTests$run$1.invoke(SpecExecutor.kt)
+	at io.kotest.engine.spec.SpecExecutor.interceptSpec(SpecExecutor.kt:144)
+	at io.kotest.engine.spec.SpecExecutor.runTests(SpecExecutor.kt:135)
+	at io.kotest.engine.spec.SpecExecutor.runTestsIfAtLeastOneActive(SpecExecutor.kt:115)
+	at io.kotest.engine.spec.SpecExecutor.execute(SpecExecutor.kt:44)
+	at io.kotest.engine.KotestEngine$submitBatch$$inlined$forEach$lambda$1$1.invokeSuspend(KotestEngine.kt:139)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:56)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:274)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:84)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+	at io.kotest.engine.KotestEngine$submitBatch$$inlined$forEach$lambda$1.run(KotestEngine.kt:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(java.base@14.0.2/Executors.java:515)
+	at java.util.concurrent.FutureTask.run$$$capture(java.base@14.0.2/FutureTask.java:264)
+	at java.util.concurrent.FutureTask.run(java.base@14.0.2/FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@14.0.2/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@14.0.2/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@14.0.2/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- <0x000000044cc19160> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"SpecRunner-1" #50 prio=5 os_prio=31 cpu=77612.30ms elapsed=77.69s tid=0x00007fb90b1cc800 nid=0xce07 runnable  [0x000070000415d000]
+   java.lang.Thread.State: RUNNABLE
+	at kotlinx.coroutines.debug.internal.DebugProbesImpl.owner(DebugProbesImpl.kt:373)
+	at kotlinx.coroutines.debug.internal.DebugProbesImpl.owner(DebugProbesImpl.kt:370)
+	at kotlinx.coroutines.debug.internal.DebugProbesImpl.probeCoroutineCreated$kotlinx_coroutines_core(DebugProbesImpl.kt:382)
+	at kotlin.coroutines.jvm.internal.DebugProbesKt.probeCoroutineCreated(DebugProbes.kt:10)
+	at kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(IntrinsicsJvm.kt:87)
+	at arrow.fx.coroutines.EvalOnKt.evalOn(evalOn.kt:45)
+	at ReadLogoKt.readLogo(ReadLogo.kt:8)
+	at ReadLogoTest$1.invokeSuspend(ReadLogoTest.kt:12)
+	at ReadLogoTest$1.invoke(ReadLogoTest.kt)
+	at io.kotest.core.internal.ExecutionsKt$executeWithBehaviours$2$1.invokeSuspend(executions.kt:13)
+	at io.kotest.core.internal.ExecutionsKt$executeWithBehaviours$2$1.invoke(executions.kt)
+	at io.kotest.core.internal.ExecutionsKt.wrapTestWithGlobalAssert(executions.kt:39)
+	at io.kotest.core.internal.ExecutionsKt$executeWithBehaviours$2.invokeSuspend(executions.kt:12)
+	at io.kotest.core.internal.ExecutionsKt$executeWithBehaviours$2.invoke(executions.kt)
+	at io.kotest.core.internal.ExecutionsKt$wrapTestWithAssertionModeCheck$2.invokeSuspend(executions.kt:25)
+	at io.kotest.core.internal.ExecutionsKt$wrapTestWithAssertionModeCheck$2.invoke(executions.kt)
+	at io.kotest.core.internal.AssertionsCheckKt.executeWithAssertionsCheck(assertionsCheck.kt:25)
+	at io.kotest.core.internal.ExecutionsKt.wrapTestWithAssertionModeCheck(executions.kt:24)
+	at io.kotest.core.internal.ExecutionsKt.executeWithBehaviours(executions.kt:11)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1$1$3$1.invokeSuspend(TestCaseExecutor.kt:207)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1$1$3$1.invoke(TestCaseExecutor.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:91)
+	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:194)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1$1$3.invokeSuspend(TestCaseExecutor.kt:201)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1$1$3.invoke(TestCaseExecutor.kt)
+	at io.kotest.mpp.ReplayKt.replay(replay.kt:18)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1$1.invokeSuspend(TestCaseExecutor.kt:196)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1$1.invoke(TestCaseExecutor.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:102)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:120)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:37)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1.invokeSuspend(TestCaseExecutor.kt:195)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2$1.invoke(TestCaseExecutor.kt)
+	at io.kotest.engine.ExecutorExecutionContext$executeWithTimeoutInterruption$$inlined$suspendCoroutine$lambda$2.invokeSuspend(ExecutorExecutionContext.kt:46)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:56)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:274)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:84)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+	at io.kotest.engine.ExecutorExecutionContext.executeWithTimeoutInterruption(ExecutorExecutionContext.kt:45)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2.invokeSuspend(TestCaseExecutor.kt:194)
+	at io.kotest.core.internal.TestCaseExecutor$executeAndWait$2.invoke(TestCaseExecutor.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:102)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:120)
+	at kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:37)
+	at io.kotest.core.internal.TestCaseExecutor.executeAndWait(TestCaseExecutor.kt:192)
+	at io.kotest.core.internal.TestCaseExecutor.invokeTestCase(TestCaseExecutor.kt:161)
+	at io.kotest.core.internal.TestCaseExecutor.executeActiveTest(TestCaseExecutor.kt:130)
+	at io.kotest.core.internal.TestCaseExecutor$intercept$2.invokeSuspend(TestCaseExecutor.kt:80)
+	at io.kotest.core.internal.TestCaseExecutor$intercept$2.invoke(TestCaseExecutor.kt)
+	at io.kotest.core.internal.TestCaseExecutor.executeIfActive(TestCaseExecutor.kt:94)
+	at io.kotest.core.internal.TestCaseExecutor.intercept(TestCaseExecutor.kt:80)
+	at io.kotest.core.internal.TestCaseExecutor.execute(TestCaseExecutor.kt:61)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner.runTest(SingleInstanceSpecRunner.kt:73)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner$execute$2$invokeSuspend$$inlined$invoke$lambda$1.invokeSuspend(SingleInstanceSpecRunner.kt:83)
+	at io.kotest.engine.runners.SingleInstanceSpecRunner$execute$2$invokeSuspend$$inlined$invoke$lambda$1.invoke(SingleInstanceSpecRunner.kt)
+	at io.kotest.engine.spec.SpecRunner$runParallel$$inlined$map$lambda$2$1.invokeSuspend(SpecRunner.kt:80)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:56)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:274)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:84)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+	at io.kotest.engine.spec.SpecRunner$runParallel$$inlined$map$lambda$2.run(SpecRunner.kt:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(java.base@14.0.2/Executors.java:515)
+	at java.util.concurrent.FutureTask.run$$$capture(java.base@14.0.2/FutureTask.java:264)
+	at java.util.concurrent.FutureTask.run(java.base@14.0.2/FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@14.0.2/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@14.0.2/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@14.0.2/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- <0x000000044a9d76a8> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"kotlinx.coroutines.DefaultExecutor" #51 daemon prio=5 os_prio=31 cpu=0.17ms elapsed=77.60s tid=0x00007fb91bb28800 nid=0x7d07 waiting on condition  [0x0000700004263000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.2/Native Method)
+	- parking to wait for  <0x0000000449cc4090> (a kotlinx.coroutines.DefaultExecutor)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@14.0.2/LockSupport.java:252)
+	at kotlinx.coroutines.DefaultExecutor.run(DefaultExecutor.kt:81)
+	at java.lang.Thread.run(java.base@14.0.2/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"ExecutionContext-Scheduler-2" #52 prio=5 os_prio=31 cpu=0.88ms elapsed=77.60s tid=0x00007fb91b3eb800 nid=0x15207 waiting on condition  [0x0000700004366000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.2/Native Method)
+	- parking to wait for  <0x0000000449d292c8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@14.0.2/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@14.0.2/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@14.0.2/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@14.0.2/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@14.0.2/ThreadPoolExecutor.java:1056)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@14.0.2/ThreadPoolExecutor.java:1116)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@14.0.2/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@14.0.2/Thread.java:832)
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #53 daemon prio=9 os_prio=31 cpu=1.06ms elapsed=13.75s tid=0x00007fb91b3ec800 nid=0x9907 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=31 cpu=75.92ms elapsed=79.39s tid=0x00007fb91b856800 nid=0x3503 runnable  
+
+"GC Thread#0" os_prio=31 cpu=47.90ms elapsed=79.40s tid=0x00007fb90b02f800 nid=0x4e03 runnable  
+
+"GC Thread#1" os_prio=31 cpu=50.09ms elapsed=78.89s tid=0x00007fb91b9e9000 nid=0x14a03 runnable  
+
+"GC Thread#2" os_prio=31 cpu=49.97ms elapsed=78.89s tid=0x00007fb8eb990800 nid=0xbb03 runnable  
+
+"GC Thread#3" os_prio=31 cpu=47.69ms elapsed=78.89s tid=0x00007fb8eb991000 nid=0xbd03 runnable  
+
+"GC Thread#4" os_prio=31 cpu=47.61ms elapsed=78.89s tid=0x00007fb8eb992000 nid=0x14803 runnable  
+
+"GC Thread#5" os_prio=31 cpu=50.90ms elapsed=78.89s tid=0x00007fb8eb992800 nid=0x14703 runnable  
+
+"GC Thread#6" os_prio=31 cpu=48.30ms elapsed=78.89s tid=0x00007fb8eb99a000 nid=0x14603 runnable  
+
+"GC Thread#7" os_prio=31 cpu=48.70ms elapsed=78.89s tid=0x00007fb8ec864800 nid=0xc103 runnable  
+
+"GC Thread#8" os_prio=31 cpu=48.96ms elapsed=78.89s tid=0x00007fb8ec865000 nid=0xc303 runnable  
+
+"GC Thread#9" os_prio=31 cpu=46.60ms elapsed=78.89s tid=0x00007fb8ec87f000 nid=0xc403 runnable  
+
+"GC Thread#10" os_prio=31 cpu=48.05ms elapsed=78.89s tid=0x00007fb8ec880000 nid=0xc603 runnable  
+
+"GC Thread#11" os_prio=31 cpu=46.27ms elapsed=78.89s tid=0x00007fb8bb180800 nid=0xc703 runnable  
+
+"GC Thread#12" os_prio=31 cpu=46.74ms elapsed=78.89s tid=0x00007fb8bb181800 nid=0xc803 runnable  
+
+"G1 Main Marker" os_prio=31 cpu=0.04ms elapsed=79.40s tid=0x00007fb91b821000 nid=0x4d03 runnable  
+
+"G1 Conc#0" os_prio=31 cpu=0.04ms elapsed=79.40s tid=0x00007fb91b822000 nid=0x4903 runnable  
+
+"G1 Refine#0" os_prio=31 cpu=29.38ms elapsed=79.40s tid=0x00007fb91b117000 nid=0x4803 runnable  
+
+"G1 Refine#1" os_prio=31 cpu=1.35ms elapsed=78.37s tid=0x00007fb8ec859000 nid=0xd703 runnable  
+
+"G1 Refine#2" os_prio=31 cpu=0.69ms elapsed=78.22s tid=0x00007fb8ee179800 nid=0xd903 runnable  
+
+"G1 Refine#3" os_prio=31 cpu=0.49ms elapsed=78.22s tid=0x00007fb8eb1ab000 nid=0x13403 runnable  
+
+"G1 Young RemSet Sampling" os_prio=31 cpu=7.57ms elapsed=79.40s tid=0x00007fb8eb008800 nid=0x3403 runnable  
+"VM Periodic Task Thread" os_prio=31 cpu=21.01ms elapsed=79.17s tid=0x00007fb91b8cb800 nid=0x6c03 waiting on condition  
+
+JNI global refs: 49, weak refs: 2946
+
